@@ -34,7 +34,8 @@ try:
     site_sayisi = input(Fore.GREEN + "Kaç Site Çıkması Gerek: " + Fore.RESET)
     for url in search(dork, num_results=int(site_sayisi), proxy=proxys, lang="tr"):
         print(url)
-        sleep(2)
+        with open("sites.txt", "a") as dosya:
+            dosya.write(url + "\n")
 except requests.exceptions.HTTPError as e:
     print(Fore.RED + f"{e}" + Fore.RESET)
     print(Fore.RED + "İstek Hatası, Exploit Kapatılıyor..." + Fore.RESET)
