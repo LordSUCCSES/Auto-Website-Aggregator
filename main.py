@@ -43,3 +43,6 @@ except requests.exceptions.HTTPError as e:
 except ValueError as e:
     print(Fore.RED + "Karakter Hatası, Exploit Kapatılıyor..." + Fore.RESET)
     sleep(2)
+except TypeError as e:
+    print(Fore.RED + f"Type Hatası: {e}, Exploit Kapatılıyor..." + Fore.RESET)
+    sleep(2)
