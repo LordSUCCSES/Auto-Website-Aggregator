@@ -28,6 +28,7 @@ def baslat():
 
 baslat()
 proxys = "http://69.84.182.43:80"
+sayi = 0
 
 try:
     dork = input(Fore.GREEN + "Dork Girin: " + Fore.RESET)
@@ -36,6 +37,8 @@ try:
         print(url)
         with open("sites.txt", "a") as dosya:
             dosya.write(url + "\n")
+            sayi += 1
+    print(Fore.BLUE + str(sayi) + " Site Bulundu" + Fore.RESET)
 except requests.exceptions.HTTPError as e:
     print(Fore.RED + f"{e}" + Fore.RESET)
     print(Fore.RED + "İstek Hatası, Exploit Kapatılıyor..." + Fore.RESET)
